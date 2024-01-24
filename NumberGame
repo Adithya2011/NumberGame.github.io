@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+     <style>
+        *{
+           padding: 0;
+           margin: 30px;
+         }
+
+        #yy{
+            text-align: center;
+            background-color: rgba(0, 255, 255,0.7);
+            border-radius: 15px;
+            padding:10px;
+            height:200px;
+            width:250px;
+        }
+        input{
+            padding:15px;
+            margin-bottom: 15px;
+        }
+        #ee{
+            color:bisque;
+            background-color: rgb(39, 88, 51);
+            padding: 7px;
+            width:105px;
+            display: inline-block;
+        }
+        h4,h2{
+          display:inline-block;
+        }
+        /* #dm{
+            background-color: aliceblue;
+            color: blue;
+            margin:0px;
+            display: inline;
+        } */
+        #xx{
+            text-align: right;
+        }
+     </style>
+</head>
+<body>
+         
+          <div id="xx">
+              <i id="dm" onclick="dm()"  class="bi bi-brightness-high-fill"></i>
+          </div>
+        
+       <center>
+            <h1><i>Number Game!</i></h1>
+            <h3>Guess The Number</h3>
+        <div id="yy"> 
+            <input type="number" placeholder="Enter your Number" value="">
+            <button id="ee" onclick="fun()">Check</button>
+            <h2>Your Score:10 </h2>
+            <h4>Check Whether you are Right Or Wrong</h4>
+        </div>
+       </center>
+
+    <script>
+       let r=Math.random();
+       r=Math.floor(r*10)+1;
+       console.log(r);
+       let h4=document.querySelector("h4");
+       let inp=document.querySelector("input");
+       let h2=document.querySelector("h2");
+       let sc=10;
+      function fun(){
+          if(inp.value==r)  {
+            h4.textContent="You are Right";
+          }
+          else {
+             sc--;
+             h2.textContent=" Your Score : "+sc;
+             h4.textContent="You are Wrong,Try Again";
+          }
+      }
+
+
+        //let dmButton = document.querySelector("#dm"); 
+        let body = document.querySelector("body");
+        let mode="light";
+
+         function dm() {
+             if(mode=="light"){
+                 body.style.backgroundColor = "black"; 
+                 body.style.color = "white";
+                 mode="dark";
+                 body.style.transition = "1.5s";
+             }
+             else{
+                 body.style.backgroundColor = "white"; 
+                 body.style.color = "black";
+                 mode="light";
+             }
+         }
+
+    </script>
+
+</body>
+</html>
