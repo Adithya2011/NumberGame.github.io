@@ -3,110 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Number Game</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <style>
-        *{
-           padding: 0;
-           margin: 30px;
-         }
+    
+    <style>
+        body {
+            padding: 30px;
+            margin: 0;
+        }
 
-        #yy{
+        #yy {
             text-align: center;
-            background-color: rgba(0, 255, 255,0.7);
+            background-color: rgba(0, 255, 255, 0.7);
             border-radius: 15px;
-            padding:10px;
-            height:200px;
-            width:250px;
+            padding: 10px;
+            max-width: 250px;
+            margin: 0 auto;
         }
-        input{
-            padding:15px;
+
+        input {
+            padding: 15px;
             margin-bottom: 15px;
+            width: 100%;
         }
-        #ee{
-            color:bisque;
+
+        #ee {
+            color: bisque;
             background-color: rgb(39, 88, 51);
             padding: 7px;
-            width:105px;
+            width: 100%;
             display: inline-block;
         }
-        h4,h2{
-          display:inline-block;
+
+        h4,
+        h2 {
+            display: inline-block;
         }
-        /* #dm{
-            background-color: aliceblue;
+
+        #dm {
             color: blue;
-            margin:0px;
-            display: inline;
-        } */
-        #xx{
+            margin: 0;
+            cursor: pointer;
+        }
+
+        #xx {
             text-align: right;
         }
-     </style>
+    </style>
 </head>
 <body>
-         
-          <div id="xx">
-              <i id="dm" onclick="dm()"  class="bi bi-brightness-high-fill"></i>
-          </div>
-        
-       <center>
+    <div id="xx">
+        <i id="dm" onclick="dm()" class="bi bi-brightness-high-fill"></i>
+    </div>
+
+    <div class="container">
+        <center>
             <h1><i>Number Game!</i></h1>
             <h3>Guess The Number</h3>
-        <div id="yy"> 
-            <input type="number" placeholder="Enter your Number" value="">
-            <button id="ee" onclick="fun()">Check</button>
-            <h2>Your Score:10 </h2>
-            <h4>Check Whether you are Right Or Wrong</h4>
-        </div>
-       </center>
+            <div id="yy">
+                <input type="number" placeholder="Enter your Number" value="">
+                <button id="ee" onclick="fun()">Check</button>
+                <h2>Your Score:10 </h2>
+                <h4>Check Whether you are Right Or Wrong</h4>
+            </div>
+        </center>
+    </div>
 
     <script>
-       let r=Math.random();
-       r=Math.floor(r*10)+1;
-       console.log(r);
-       let h4=document.querySelector("h4");
-       let inp=document.querySelector("input");
-       let h2=document.querySelector("h2");
-       let sc=10;
-      function fun(){
-          if(inp.value==r)  {
-            h4.textContent="You are Right";
-          }
-          else {
-             sc--;
-             h2.textContent=" Your Score : "+sc;
-             h4.textContent="You are Wrong,Try Again";
-          }
-      }
+        let r = Math.floor(Math.random() * 10) + 1;
+        console.log(r);
+        let h4 = document.querySelector("h4");
+        let inp = document.querySelector("input");
+        let h2 = document.querySelector("h2");
+        let sc = 10;
 
+        function fun() {
+            if (inp.value == r) {
+                h4.textContent = "You are Right";
+            } else {
+                sc--;
+                h2.textContent = " Your Score : " + sc;
+                h4.textContent = "You are Wrong,Try Again";
+            }
+        }
 
-        //let dmButton = document.querySelector("#dm"); 
         let body = document.querySelector("body");
-        let mode="light";
+        let mode = "light";
 
-         function dm() {
-             if(mode=="light"){
-                 body.style.backgroundColor = "black"; 
-                 body.style.color = "white";
-                 mode="dark";
-                 body.style.transition = "1.5s";
-             }
-             else{
-                 body.style.backgroundColor = "white"; 
-                 body.style.color = "black";
-                 mode="light";
-             }
-         }
-
+        function dm() {
+            if (mode == "light") {
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+                mode = "dark";
+                body.style.transition = "1.5s";
+            } else {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+                mode = "light";
+            }
+        }
     </script>
-    
+
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
 </body>
 </html>
