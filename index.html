@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +21,7 @@
             background-color: rgba(0, 255, 255, 0.7);
             border-radius: 15px;
             padding: 10px;
-            max-width: 250px;
-            margin: 0 auto;
+            margin: 10px; /* Add some margin for better spacing */
         }
 
         input {
@@ -62,7 +63,7 @@
         <center>
             <h1><i>Number Game!</i></h1>
             <h3>Guess The Number</h3>
-            <div id="yy">
+            <div id="yy" class="col-md-6 mx-auto"> <!-- Use Bootstrap grid classes -->
                 <input type="number" placeholder="Enter your Number" value="">
                 <button id="ee" onclick="fun()">Check</button>
                 <h2>Your Score:10 </h2>
@@ -72,39 +73,39 @@
     </div>
 
     <script>
-        let r = Math.floor(Math.random() * 10) + 1;
-        console.log(r);
-        let h4 = document.querySelector("h4");
-        let inp = document.querySelector("input");
-        let h2 = document.querySelector("h2");
-        let sc = 10;
+      let r = Math.floor(Math.random() * 10) + 1;
+      console.log(r);
+      let h4 = document.querySelector("h4");
+      let inp = document.querySelector("input");
+      let h2 = document.querySelector("h2");
+      let sc = 10;
 
-        function fun() {
-            if (inp.value == r) {
-                h4.textContent = "You are Right";
-            } else {
-                sc--;
-                h2.textContent = " Your Score : " + sc;
-                h4.textContent = "You are Wrong,Try Again";
-            }
-        }
+      function fun() {
+          if (inp.value == r) {
+              h4.textContent = "You are Right";
+          } else {
+              sc--;
+              h2.textContent = " Your Score : " + sc;
+              h4.textContent = "You are Wrong,Try Again";
+          }
+      }
 
-        let body = document.querySelector("body");
-        let mode = "light";
+      let body = document.querySelector("body");
+      let mode = "light";
 
-        function dm() {
-            if (mode == "light") {
-                body.style.backgroundColor = "black";
-                body.style.color = "white";
-                mode = "dark";
-                body.style.transition = "1.5s";
-            } else {
-                body.style.backgroundColor = "white";
-                body.style.color = "black";
-                mode = "light";
-            }
-        }
-    </script>
+      function dm() {
+          if (mode == "light") {
+              body.style.backgroundColor = "black";
+              body.style.color = "white";
+              mode = "dark";
+              body.style.transition = "1.5s";
+          } else {
+              body.style.backgroundColor = "white";
+              body.style.color = "black";
+              mode = "light";
+          }
+      }
+  </script>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
